@@ -1,0 +1,108 @@
+:root {
+    --bg: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+    --text: #111827;
+    --muted: rgba(17, 24, 39, 0.65);
+    --glass: rgba(255, 255, 255, 0.72);
+    --accent: rgba(0, 0, 0, 0.6);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Make content flow vertically inside a single centered visual card (no HTML changes) */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(760px, calc(100% - 32px));
+    border-radius: 14px;
+    background: var(--glass);
+    border: 1px solid rgba(17, 24, 39, 0.06);
+    box-shadow: 0 10px 36px rgba(17, 24, 39, 0.06);
+    padding: 28px;
+    pointer-events: none;
+    backdrop-filter: blur(8px) saturate(120%);
+    z-index: 0;
+}
+
+body>* {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 0 16px;
+    box-sizing: border-box;
+    background: transparent;
+    border-radius: 6px;
+    padding: 12px 18px;
+    border: none;
+    box-shadow: none;
+    position: relative;
+
+}
+
+/* final child spacing tweak */
+body>*:last-child {
+    margin-bottom: 0;
+}
+
+/* make top button align nicely */
+body>.btn {
+    margin-top: 0;
+    align-self: flex-start;
+    padding: 10px 14px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 120ms ease, background 120ms ease, box-shadow 150ms ease;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
+}
+
+.btn:hover {
+    background: rgba(0, 0, 0, 0.75);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(17, 24, 39, 0.12);
+}
+
+.btn:focus {
+    outline: 3px solid rgba(17, 24, 39, 0.12);
+    outline-offset: 3px
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+    color: var(--text);
+}
+
+p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    line-height: 1.5
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 24, 39, 0.06);
+    box-shadow: 0 8px 20px rgba(17, 24, 39, 0.06);
+    object-fit: cover
+}

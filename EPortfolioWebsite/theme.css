@@ -1,0 +1,203 @@
+:root {
+    --page-bg: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+    --page-color: #111827;
+    /* dark slate */
+    --accent-1: #6b7280;
+    /* gray */
+    --accent-2: #374151;
+    /* darker gray */
+    --card-bg: #ffffff;
+    --card-text: #111827;
+    --card-border: rgba(17, 24, 39, 0.06);
+    --muted: rgba(17, 24, 39, 0.65);
+}
+
+/* Page layout */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: var(--page-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--page-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    text-align: center;
+    margin: 24px 0 8px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    text-shadow: none;
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    max-width: 1100px;
+    margin: 0 auto 48px;
+}
+
+/* item becomes an outer wrapper so cards can be flexible */
+.flexbox .item {
+    width: 240px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.card {
+    background: var(--card-bg);
+    color: var(--card-text);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.12);
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.05rem;
+    letter-spacing: 0.2px;
+}
+
+.card-meta {
+    /* year */
+    font-size: 0.85rem;
+    opacity: 0.95;
+    color: var(--muted);
+}
+
+/* image inserted between year and tags */
+.card-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+.card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(17, 24, 39, 0.04);
+    color: var(--page-color);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+}
+
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    text-align: center;
+    transition: background 150ms ease, transform 120ms ease, box-shadow 160ms;
+}
+
+.btn:hover {
+    background: rgba(0, 0, 0, 0.75);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.btn:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
+.btn:focus {
+    outline: 3px solid rgba(17, 24, 39, 0.12);
+    outline-offset: 3px;
+}
+
+@media (max-width:900px) {
+    .flexbox .item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width:480px) {
+    .flexbox .item {
+        width: 100%;
+    }
+}
+
+/* Page entrance fade-in */
+/* Start page with class `page-enter` on <body> (opacity 0 + slight translate). Remove the class on load to reveal the page. */
+body { transition: opacity 420ms ease, transform 420ms ease; }
+body.page-enter { opacity: 0; transform: translateY(8px); }
+@media (prefers-reduced-motion: reduce) {
+    body.page-enter { transition: none; opacity: 1; transform: none; }
+}
+
+/* Fade-out overlay and page fade */
+.fade-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(17,24,39,0);
+    pointer-events: none;
+    opacity: 0;
+    transition: background 320ms ease, opacity 320ms ease;
+}
+.fade-overlay.show {
+    background: rgba(17,24,39,0.8);
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/* Optional body fade for subtle scaling */
+body.fade-out {
+    transition: opacity 320ms ease, transform 320ms ease, filter 320ms ease;
+    opacity: 0;
+    transform: scale(0.995);
+    filter: blur(0.6px);
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+    .fade-overlay,
+    body.fade-out { transition: none; }
+}
