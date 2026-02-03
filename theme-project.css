@@ -94,7 +94,7 @@ img {
     box-shadow: 0 8px 20px rgba(17, 24, 39, 0.06);
     object-fit: cover;
     -webkit-user-drag: none;
-    user-drag: none;
+    -webkit-user-select: none;
     user-select: none;
     -webkit-touch-callout: none;
 }
@@ -168,4 +168,47 @@ img {
 /* Larger overlay for main media */
 .project-main-media .media-play-overlay {
     font-size: 40px;
+}
+
+/* Responsive mobile tweaks */
+@media (max-width: 700px) {
+    /* Page spacing and typography */
+    #project-container { padding: 12px; }
+    #project-title { font-size: 1.25rem; }
+    #project-desc { font-size: 0.95rem; }
+
+    /* Thumbnails: allow horizontal scrolling on small screens */
+    #project-thumbs { gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
+    #project-thumbs .thumb-btn img { width: 64px; height: auto; }
+
+    /* Modal: full-screen friendly and larger buttons */
+    .image-modal { padding: 8px; align-items: center; }
+    .image-modal-toolbar { top: 8px; left: 8px; right: 8px; gap: 6px; }
+    .image-modal .btn { padding: 14px 16px; font-size: 1.05rem; border-radius: 8px; }
+    .image-modal-viewport { align-items: center; justify-content: center; }
+    .image-modal canvas { border-radius: 6px; max-height: calc(100vh - 120px); }
+
+    /* Ensure main media scales well */
+    .project-main-media img, .project-main-media video { width: 100%; height: auto; max-height: calc(100vh - 220px); object-fit: contain; }
+
+    /* Table: keep two columns (item / value) on mobile; wrap long content */
+    #project-table { width: 100%; border: 0; margin-top: 12px; border-collapse: collapse; table-layout: fixed; }
+    #project-table tr { display: table-row; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    #project-table th, #project-table td { display: table-cell; vertical-align: top; padding: 8px 10px; box-sizing: border-box; text-align: left; }
+    #project-table th { width: 35%; font-weight: 700; color: #333; white-space: nowrap; padding-right: 12px; }
+    #project-table td { width: 65%; word-wrap: break-word; white-space: normal; }
+
+    /* If content is very long on very small screens, allow th to shrink slightly */
+    @media (max-width: 420px) {
+      #project-table th { width: 40%; }
+      #project-table td { width: 60%; }
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 420px) {
+    .image-modal .btn { padding: 12px 14px; font-size: 0.95rem; }
+    #project-thumbs .thumb-btn img { width: 56px; }
+    #project-title { font-size: 1.1rem; }
+    #project-desc { font-size: 0.9rem; }
 }

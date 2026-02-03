@@ -12,21 +12,27 @@ async function renderProject() {
   const tableEl = document.getElementById('project-table');
   const notFoundEl = document.getElementById('project-notfound');
 
-  // Protect images and videos from easy saving
+  // Protect media elements: disable right-click but allow image dragging (set drag data); block video drag
   function protectMediaEl(el) {
     if (!el) return;
-    el.draggable = false;
     el.addEventListener('contextmenu', e => e.preventDefault());
-    el.addEventListener('dragstart', e => e.preventDefault());
+    if (el.tagName === 'VIDEO') {
+      el.draggable = false;
+      el.addEventListener('dragstart', e => e.preventDefault());
+    } else if (el.tagName === 'IMG') {
+      el.draggable = true;
+      el.addEventListener('dragstart', e => {
+        try {
+          e.dataTransfer.setData('text/uri-list', el.src);
+          e.dataTransfer.setData('text/plain', el.src);
+        } catch (err) {}
+      });
+    }
   }
 
-  // Global fallbacks
+  // Global: prevent right-click on images/videos but allow dragging images; block drag for videos
   document.addEventListener('contextmenu', (e) => { if (e.target && (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO')) e.preventDefault(); });
-  document.addEventListener('dragstart', (e) => { if (e.target && (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO')) e.preventDefault(); });
-
-  // Global fallback handlers in case images are added dynamically elsewhere
-  document.addEventListener('contextmenu', (e) => { if (e.target && e.target.tagName === 'IMG') e.preventDefault(); });
-  document.addEventListener('dragstart', (e) => { if (e.target && e.target.tagName === 'IMG') e.preventDefault(); });
+  document.addEventListener('dragstart', (e) => { if (e.target && e.target.tagName === 'VIDEO') e.preventDefault(); });
 
   // In-page modal (mobile-friendly) preview with canvas watermark and pinch/zoom/pan
   function openImageModal(src, title) {
@@ -443,6 +449,7 @@ async function renderProject() {
           img.style.height = 'auto';
           img.style.cursor = 'zoom-in';
           img.title = 'Click to open larger preview';
+          img.draggable = true;
           img.addEventListener('click', () => openImageWindow(m.src, project.title));
           protectMediaEl(img);
           mainMediaEl.appendChild(img);
@@ -482,9 +489,14 @@ async function renderProject() {
           img.style.height = 'auto';
           img.style.marginRight = '8px';
           img.style.cursor = 'pointer';
-          img.draggable = false;
+          img.draggable = true;
           img.addEventListener('contextmenu', e => e.preventDefault());
-          img.addEventListener('dragstart', e => e.preventDefault());
+          img.addEventListener('dragstart', e => {
+            try {
+              e.dataTransfer.setData('text/uri-list', m.src);
+              e.dataTransfer.setData('text/plain', m.src);
+            } catch (err) {}
+          });
           btn.appendChild(img);
         } else if (m.type === 'video') {
           if (m.poster) {

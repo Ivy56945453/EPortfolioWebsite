@@ -93,20 +93,6 @@
     }
   },
   {
-    "id": "aib-web-system",
-    "title": "Bakery Web System",
-    "year": "2025",
-    "description": "A group project implementing a web system using Servlets and Java.",
-    "media": [
-      { "type": "image", "src": "images/aib-web-system.webp" }
-    ],
-    "details": {
-      "Role": "Group",
-      "Technologies": "Servlet, Java",
-      "Workload": "high"
-    }
-  },
-  {
     "id": "medical-training-system",
     "title": "Immersive Medical Training System",
     "year": "2025",
