@@ -17,21 +17,9 @@ body {
     min-height: 100vh;
 }
 
+/* Hidden: previously displayed a centered translucent box behind the project content */
 body::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: min(760px, calc(100% - 32px));
-    border-radius: 14px;
-    background: var(--glass);
-    border: 1px solid rgba(17, 24, 39, 0.06);
-    box-shadow: 0 10px 36px rgba(17, 24, 39, 0.06);
-    padding: 28px;
-    pointer-events: none;
-    backdrop-filter: blur(8px) saturate(120%);
-    z-index: 0;
+    display: none;
 }
 
 body>* {
@@ -109,4 +97,75 @@ img {
     user-drag: none;
     user-select: none;
     -webkit-touch-callout: none;
+}
+
+.project-main-media video {
+    width: 100%;
+    max-height: 560px;
+    border-radius: 8px;
+}
+
+.media-play-overlay {
+    position: absolute;
+    inset: 0 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.95);
+    font-size: 32px;
+    pointer-events: none;
+}
+
+/* Modal lightbox (mobile-friendly) */
+.image-modal {
+    position: fixed;
+    inset: 0;
+    display: none; /* toggled via aria-hidden */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 99999;
+    padding: 12px;
+}
+.image-modal[aria-hidden="false"] { display: flex; }
+.image-modal-toolbar {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 100000;
+}
+.image-modal .btn { padding: 10px 12px; }
+.image-modal-viewport {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.image-modal canvas {
+    max-width: 100%;
+    max-height: 100%;
+    touch-action: none; /* we handle pinch/drag */
+    border-radius: 8px;
+}
+
+@media (orientation: portrait) {
+    .image-modal-toolbar { top: 8px; left: 8px; right: 8px; }
+    .image-modal .btn { padding: 12px; font-size: 1rem; }
+}
+
+
+/* Smaller overlay for thumbnail cards */
+.item .media-play-overlay {
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+/* Larger overlay for main media */
+.project-main-media .media-play-overlay {
+    font-size: 40px;
 }

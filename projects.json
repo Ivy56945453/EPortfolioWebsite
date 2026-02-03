@@ -1,10 +1,13 @@
 [
   {
     "id": "web-design-project",
-    "title": "Web Design Project",
+    "title": "Rhythm Games Information Website",
     "year": "2023",
-    "description": "A responsive web design project practicing modern HTML, CSS and JavaScript techniques.",
-    "images": ["images/covers/web-design-project.webp"],
+    "description": "This is a free-topic web design project where I created a website to store and show information about rhythm games.",
+    "media": [
+      { "type": "image", "src": "images/web-design-project.webp" },
+      { "type": "image", "src": "images/web-design-project2.webp" }
+    ],
     "details": {
       "Role": "Individual",
       "Technologies": "HTML, CSS, JavaScript",
@@ -15,24 +18,48 @@
     "id": "motor-spare-sale-application",
     "title": "Motor Spare Sale Application",
     "year": "2024",
-    "description": "A group application to manage motor spare parts sale and inventory.",
-    "images": ["images/covers/car-spare-sale-application.webp"],
+    "description": "Legend Motor Limited Company (LMC) project is about creating a simple system to manage orders, accounts, stock, dispatch, pricing, and analytics. It is a group project by four teammates, with both a report and an implementation as final outputs.",
+    "media": [
+      { "type": "image", "src": "images/car-spare-sale-application.webp" },
+      { "type": "image", "src": "images/car-spare-sale-application2.webp" }
+    ],
     "details": {
       "Role": "Group",
-      "Technologies": "C#, XAMPP",
+      "Technologies": "C#, XAMPP, MySQL",
       "Workload": "high"
     }
   },
   {
     "id": "math-android-game",
-    "title": "Math Android Game",
+    "title": "Arithmetic Arena (Math Game)",
     "year": "2024",
     "description": "An educational Android game focused on math practice and fun UX.",
-    "images": ["images/covers/math-android-game.webp"],
+    "media": [
+      { "type": "image", "src": "images/math-android-game.webp" },
+      { "type": "image", "src": "images/math-android-game1.webp" },
+      { "type": "image", "src": "images/math-android-game2.webp" },
+      { "type": "image", "src": "images/math-android-game3.webp" }
+    ],
     "details": {
       "Role": "Individual",
       "Technologies": "Android Studio, Java",
       "Workload": "medium"
+    }
+  },
+   {
+    "id": "vehicle-insurance-sale-website",
+    "title": "Motor & Insurance Sale System",
+    "year": "2024",
+    "description": "A group website for listing vehicles and managing insurance offerings.",
+    "media": [
+      { "type": "image", "src": "images/vehicle-sale-list.webp" },
+      { "type": "image", "src": "images/vehicle-sale-list2.webp" },
+      { "type": "image", "src": "images/vehicle-sale-list3.webp" }
+    ],
+    "details": {
+      "Role": "Group",
+      "Technologies": "HTML, CSS, JQuery, JavaScript, HCI Design",
+      "Workload": "high"
     }
   },
   {
@@ -40,7 +67,10 @@
     "title": "3D Restaurant",
     "year": "2025",
     "description": "Practices of 3D modeling and interior design for a restaurant scene.",
-    "images": ["images/covers/3d-restaurant.webp"],
+    "media": [
+      { "type": "image", "src": "images/3d-restaurant.webp" },
+      { "type": "image", "src": "images/3d-restaurant2.webp" }
+    ],
     "details": {
       "Role": "Individual",
       "Technologies": "AutoDesk 3D Max",
@@ -52,7 +82,10 @@
     "title": "3D Lego Scene",
     "year": "2025",
     "description": "A 3D Lego scene modeling and rendering exercise.",
-    "images": ["images/covers/3d-lego-scence.webp","images/covers/3d-restaurant.webp"],
+    "media": [
+      { "type": "image", "src": "images/3d-lego-scene.webp" },
+      { "type": "image", "src": "images/3d-lego-scene2.webp" }
+    ],
     "details": {
       "Role": "Individual",
       "Technologies": "AutoDesk 3D Max",
@@ -60,23 +93,13 @@
     }
   },
   {
-    "id": "vehicle-insurance-sale-website",
-    "title": "Vehicle & Insurance Sale Website",
-    "year": "2025",
-    "description": "A group website for listing vehicles and managing insurance offerings.",
-    "images": ["images/covers/vehicle-sale-list.webp"],
-    "details": {
-      "Role": "Group",
-      "Technologies": "HTML, CSS, JavaScript",
-      "Workload": "high"
-    }
-  },
-  {
     "id": "aib-web-system",
-    "title": "AIB Web System",
+    "title": "Bakery Web System",
     "year": "2025",
     "description": "A group project implementing a web system using Servlets and Java.",
-    "images": ["images/covers/aib-web-system.webp"],
+    "media": [
+      { "type": "image", "src": "images/aib-web-system.webp" }
+    ],
     "details": {
       "Role": "Group",
       "Technologies": "Servlet, Java",
@@ -85,13 +108,22 @@
   },
   {
     "id": "medical-training-system",
-    "title": "Medical Training System",
+    "title": "Immersive Medical Training System",
     "year": "2025",
-    "description": "A group project for medical training tools built using Swift.",
-    "images": ["images/covers/medical-training-system.webp"],
+    "description": "This is my final year group project at IVE, focused on medical training tools built with Swift. The training items include CPR, architecture, and the Glasgow scale, and my main responsibility is developing the CPR module.",
+    "media": [
+      { "type": "image", "src": "images/mts.webp" },
+      { "type": "image", "src": "images/mts2.webp" },
+      { "type": "image", "src": "images/mts3.webp" },
+      { "type": "video", "src": "videos/mts-video.mp4" },
+      { "type": "image", "src": "images/mts4.webp" },
+      { "type": "image", "src": "images/mts5.webp" },
+      { "type": "image", "src": "images/mts6.webp" },
+      { "type": "image", "src": "images/mts7.webp" }
+    ],
     "details": {
       "Role": "Group",
-      "Technologies": "Swift",
+      "Technologies": "Swift, Xcode, Docker",
       "Workload": "high"
     }
   }

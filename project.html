@@ -11,15 +11,26 @@
             <p id="project-desc"></p>
 
             <div id="project-media">
-                <img id="project-main-img" src="" alt="Project main image" loading="lazy" draggable="false">
+                <div id="project-main-media" class="project-main-media" aria-live="polite"></div>
 
-                <div id="project-thumbs" aria-label="Additional images" style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap"></div>
+                <div id="project-thumbs" aria-label="Additional media" style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap"></div>
             </div>
 
             <table id="project-table" border="1"></table>
 
             <div id="project-notfound" style="display:none; color: #a00;">Project not found. <a href="index.html">Back to projects</a></div>
         </main>
+
+        <!-- Lightbox modal for image preview (mobile-friendly) -->
+        <div id="image-modal" class="image-modal" tabindex="-1" aria-hidden="true" role="dialog" aria-label="Image preview">
+            <div class="image-modal-toolbar">
+                <button class="btn" id="modal-zoom-in">+</button>
+                <button class="btn" id="modal-zoom-out">−</button>
+                <button class="btn" id="modal-reset">Reset</button>
+                <button class="btn" id="modal-close">Close</button>
+            </div>
+            <div class="image-modal-viewport"><canvas id="modal-canvas" aria-label="Image Preview with watermark"></canvas></div>
+        </div>
 
         <script src="project.js"></script>
     </body>

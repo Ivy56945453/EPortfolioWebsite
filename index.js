@@ -19,9 +19,33 @@ async function renderProjects() {
       title.textContent = p.title;
       meta.textContent = p.year || '';
 
-      if (Array.isArray(p.images) && p.images.length > 0) {
-        img.src = p.images[0];
-        img.alt = p.title + ' thumbnail';
+      // Support both `media` (new) and `images` (legacy)
+      const firstMedia = (Array.isArray(p.media) && p.media.length) ? p.media[0] : ((Array.isArray(p.images) && p.images.length) ? { type: 'image', src: p.images[0] } : null);
+
+      if (firstMedia) {
+        // Use poster for videos when available, else use the image src
+        const thumbSrc = (firstMedia.type === 'video' && firstMedia.poster) ? firstMedia.poster : (firstMedia.type === 'video' ? '' : firstMedia.src);
+        if (thumbSrc) {
+          img.src = thumbSrc;
+          img.alt = p.title + ' thumbnail';
+        } else {
+          img.remove();
+        }
+
+        // video overlay
+        if (firstMedia.type === 'video') {
+          const overlay = document.createElement('span');
+          overlay.className = 'media-play-overlay';
+          overlay.textContent = '▶';
+          overlay.setAttribute('aria-hidden', 'true');
+
+          const wrapper = document.createElement('div');
+          wrapper.style.position = 'relative';
+          img.parentNode.replaceChild(wrapper, img);
+          wrapper.appendChild(img);
+          wrapper.appendChild(overlay);
+        }
+
       } else {
         img.remove();
       }
