@@ -19,7 +19,7 @@
     "images": ["images/covers/car-spare-sale-application.webp"],
     "details": {
       "Role": "Group",
-      "Technologies": "C#, XAMPP, JavaScript",
+      "Technologies": "C#, XAMPP",
       "Workload": "high"
     }
   },

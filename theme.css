@@ -138,6 +138,32 @@ h1 {
     text-decoration: none;
 }
 
+/* smaller variant for inline controls */
+.btn.small {
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    box-shadow: none;
+}
+
+/* small icon-like download link next to thumbnails */
+.thumb-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(0,0,0,0.06);
+    color: var(--accent-2);
+    text-decoration: none;
+    font-weight: 700;
+}
+.thumb-download:hover {
+    background: rgba(0,0,0,0.1);
+}
+
 .btn:hover {
     background: rgba(0, 0, 0, 0.75);
     transform: translateY(-2px);

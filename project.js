@@ -12,6 +12,18 @@ async function renderProject() {
   const tableEl = document.getElementById('project-table');
   const notFoundEl = document.getElementById('project-notfound');
 
+  // Protect images from easy saving: disable dragging and right-click on image elements
+  function protectImageEl(img) {
+    if (!img) return;
+    img.draggable = false;
+    img.addEventListener('contextmenu', e => e.preventDefault());
+    img.addEventListener('dragstart', e => e.preventDefault());
+  }
+
+  // Global fallback handlers in case images are added dynamically elsewhere
+  document.addEventListener('contextmenu', (e) => { if (e.target && e.target.tagName === 'IMG') e.preventDefault(); });
+  document.addEventListener('dragstart', (e) => { if (e.target && e.target.tagName === 'IMG') e.preventDefault(); });
+
   if (!id) {
     notFoundEl.style.display = 'block';
     titleEl.textContent = 'No project selected';
@@ -38,8 +50,13 @@ async function renderProject() {
     if (Array.isArray(project.images) && project.images.length > 0) {
       mainImg.src = project.images[0];
       mainImg.alt = project.title + ' image';
+      protectImageEl(mainImg);
 
       project.images.forEach((src, idx) => {
+        const thumbWrap = document.createElement('div');
+        thumbWrap.style.display = 'flex';
+        thumbWrap.style.alignItems = 'center';
+
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'thumb-btn';
@@ -56,13 +73,20 @@ async function renderProject() {
         img.style.height = 'auto';
         img.style.marginRight = '8px';
         img.style.cursor = 'pointer';
+        img.draggable = false;
+        img.addEventListener('contextmenu', e => e.preventDefault());
+        img.addEventListener('dragstart', e => e.preventDefault());
 
         btn.appendChild(img);
         btn.addEventListener('click', () => {
           mainImg.src = src;
+          protectImageEl(mainImg);
         });
-        thumbsEl.appendChild(btn);
+
+        thumbWrap.appendChild(btn);
+        thumbsEl.appendChild(thumbWrap);
       });
+
     } else {
       mainImg.src = '';
       mainImg.alt = '';
