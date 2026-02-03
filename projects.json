@@ -1,0 +1,98 @@
+[
+  {
+    "id": "web-design-project",
+    "title": "Web Design Project",
+    "year": "2023",
+    "description": "A responsive web design project practicing modern HTML, CSS and JavaScript techniques.",
+    "images": ["images/covers/web-design-project.webp"],
+    "details": {
+      "Role": "Individual",
+      "Technologies": "HTML, CSS, JavaScript",
+      "Workload": "medium"
+    }
+  },
+  {
+    "id": "motor-spare-sale-application",
+    "title": "Motor Spare Sale Application",
+    "year": "2024",
+    "description": "A group application to manage motor spare parts sale and inventory.",
+    "images": ["images/covers/car-spare-sale-application.webp"],
+    "details": {
+      "Role": "Group",
+      "Technologies": "C#, XAMPP, JavaScript",
+      "Workload": "high"
+    }
+  },
+  {
+    "id": "math-android-game",
+    "title": "Math Android Game",
+    "year": "2024",
+    "description": "An educational Android game focused on math practice and fun UX.",
+    "images": ["images/covers/math-android-game.webp"],
+    "details": {
+      "Role": "Individual",
+      "Technologies": "Android Studio, Java",
+      "Workload": "medium"
+    }
+  },
+  {
+    "id": "3d-restaurant",
+    "title": "3D Restaurant",
+    "year": "2025",
+    "description": "Practices of 3D modeling and interior design for a restaurant scene.",
+    "images": ["images/covers/3d-restaurant.webp"],
+    "details": {
+      "Role": "Individual",
+      "Technologies": "AutoDesk 3D Max",
+      "Workload": "medium"
+    }
+  },
+  {
+    "id": "3d-lego-scene",
+    "title": "3D Lego Scene",
+    "year": "2025",
+    "description": "A 3D Lego scene modeling and rendering exercise.",
+    "images": ["images/covers/3d-lego-scence.webp","images/covers/3d-restaurant.webp"],
+    "details": {
+      "Role": "Individual",
+      "Technologies": "AutoDesk 3D Max",
+      "Workload": "medium"
+    }
+  },
+  {
+    "id": "vehicle-insurance-sale-website",
+    "title": "Vehicle & Insurance Sale Website",
+    "year": "2025",
+    "description": "A group website for listing vehicles and managing insurance offerings.",
+    "images": ["images/covers/vehicle-sale-list.webp"],
+    "details": {
+      "Role": "Group",
+      "Technologies": "HTML, CSS, JavaScript",
+      "Workload": "high"
+    }
+  },
+  {
+    "id": "aib-web-system",
+    "title": "AIB Web System",
+    "year": "2025",
+    "description": "A group project implementing a web system using Servlets and Java.",
+    "images": ["images/covers/aib-web-system.webp"],
+    "details": {
+      "Role": "Group",
+      "Technologies": "Servlet, Java",
+      "Workload": "high"
+    }
+  },
+  {
+    "id": "medical-training-system",
+    "title": "Medical Training System",
+    "year": "2025",
+    "description": "A group project for medical training tools built using Swift.",
+    "images": ["images/covers/medical-training-system.webp"],
+    "details": {
+      "Role": "Group",
+      "Technologies": "Swift",
+      "Workload": "high"
+    }
+  }
+]

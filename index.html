@@ -11,145 +11,27 @@
 
 <body>
     <h1>Welcome to My Portfolio</h1>
-    <div class="flexbox">
-
-        <div class="item">
-            <div class="card">
-                <div>
-                    <h3 class="card-title">Web Design Project</h3>
-                    <div class="card-meta">2023</div>
-                </div>
-                <img class="card-img" src="images/covers/web-design-project.webp" alt="Web Design Project thumbnail"
-                    loading="lazy">
-                <div class="card-footer">
-                    <div class="card-tags"><span class="tag">Individual</span><span class="tag">HTML</span><span
-                            class="tag">CSS</span><span class="tag">JavaScript</span></div>
-                    <button class="btn" type="button" aria-label="View details for Web Design Project">View
-                        details</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="card">
-                <div>
-                    <h3 class="card-title">Motor Spare Sale Application</h3>
-                    <div class="card-meta">2024</div>
-                </div>
-                <img class="card-img" src="images/covers/car-spare-sale-application.webp"
-                    alt="Motor Spare Sale Application thumbnail" loading="lazy">
-                <div class="card-footer">
-                    <div class="card-tags"><span class="tag">Group</span><span class="tag">C#</span><span
-                            class="tag">XAMPP</span><span class="tag">JavaScript</span></div>
-                    <button class="btn" type="button" aria-label="View details for Motor Spare Sale Application">View
-                        details</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="card">
-                <div>
-                    <h3 class="card-title">Math Android Game</h3>
-                    <div class="card-meta">2024</div>
-                </div>
-                <img class="card-img" src="images/covers/math-android-game.webp" alt="Math Android Game thumbnail"
-                    loading="lazy">
-                <div class="card-footer">
-                    <div class="card-tags"><span class="tag">Individual</span><span class="tag">Android
-                            Studio</span><span class="tag">Java</span></div>
-                    <button class="btn" type="button" aria-label="View details for Math Android Game">View
-                        details</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="card">
-                <div>
-                    <h3 class="card-title">3D Restaurant</h3>
-                    <div class="card-meta">2025</div>
-                </div>
-                <img class="card-img" src="images/covers/3d-restaurant.webp" alt="3D Restaurant thumbnail"
-                    loading="lazy">
-                <div class="card-footer">
-                    <div class="card-tags"><span class="tag">Individual</span><span class="tag">AutoDesk 3D Max</span>
-                    </div>
-                    <button class="btn" type="button" aria-label="View details for 3D Restaurant">View details</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="card">
-                <div>
-                    <h3 class="card-title">3D Lego Scene</h3>
-                    <div class="card-meta">2025</div>
-                </div>
-                <img class="card-img" src="images/covers/3d-lego-scence.webp" alt="3D Lego Scene thumbnail"
-                    loading="lazy">
-                <div class="card-footer">
-                    <div class="card-tags"><span class="tag">Individual</span><span class="tag">AutoDesk 3D Max</span>
-                    </div>
-                    <button class="btn" type="button" aria-label="View details for 3D Lego Scene">View details</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="card">
-                <div>
-                    <h3 class="card-title">Vehicle & Insurance Sale Website</h3>
-                    <div class="card-meta">2025</div>
-                </div>
-                <img class="card-img" src="images/covers/vehicle-sale-list.webp" alt="vehicle-sale-list thumbnail"
-                    loading="lazy">
-                <div class="card-footer">
-                    <div class="card-tags"><span class="tag">Group</span><span class="tag">HTML</span><span
-                            class="tag">CSS</span><span class="tag">JavaScript</span></div>
-                    <button class="btn" type="button"
-                        aria-label="View details for Vehicle & Insurance Sale Website">View details</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="card">
-                <div>
-                    <h3 class="card-title">AIB Web System</h3>
-                    <div class="card-meta">2025</div>
-                </div>
-                <img class="card-img" src="images/covers/aib-web-system.webp" alt="AIB Web System thumbnail"
-                    loading="lazy">
-                <div class="card-footer">
-                    <div class="card-tags"><span class="tag">Group</span><span class="tag">Servlet</span><span
-                            class="tag">Java</span></div>
-                    <button class="btn" type="button" aria-label="View details for AIB Web System">View details</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="card">
-                <div>
-                    <h3 class="card-title">Medical Training System</h3>
-                    <div class="card-meta">2025</div>
-                </div>
-                <img class="card-img" src="images/covers/medical-training-system.webp"
-                    alt="Medical Training System thumbnail" loading="lazy">
-                <div class="card-footer">
-                    <div class="card-tags"><span class="tag">Group</span><span class="tag">Swift</span><span
-                            class="tag"></span></div>
-                    <button class="btn" type="button" aria-label="View details for Medical Training System">View
-                        details</button>
-                </div>
-            </div>
-        </div>
-
-
-
-
+    <div class="flexbox" id="projects-container">
+        <!-- Project cards will be rendered here from projects.json -->
     </div>
+
+    <template id="project-template">
+        <div class="item">
+            <div class="card">
+                <div>
+                    <h3 class="card-title"></h3>
+                    <div class="card-meta"></div>
+                </div>
+                <img class="card-img" src="" alt="" loading="lazy">
+                <div class="card-footer">
+                    <div class="card-tags"></div>
+                    <a class="btn" role="button" href="" aria-label="View details">View details</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="index.js"></script>
 </body>
 
 </html>

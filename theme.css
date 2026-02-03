@@ -71,6 +71,8 @@ h1 {
     width: 100%;
     box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
     transition: transform 200ms ease, box-shadow 200ms ease;
+    overflow: hidden; /* prevent hover shadows/transforms from overlapping other cards */
+    position: relative;
 }
 
 .card:hover {
@@ -132,9 +134,8 @@ h1 {
     cursor: pointer;
     font-weight: 700;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-    width: 100%;
     text-align: center;
-    transition: background 150ms ease, transform 120ms ease, box-shadow 160ms;
+    text-decoration: none;
 }
 
 .btn:hover {
